@@ -1,5 +1,5 @@
 // Import necessary functions from other modules
-import { getTripDetails } from './js/handleRequests.js';
+import { getTripDetails } from './js/app.js';
 import {
     populateTripDetails,
     bookCurrentTrip,

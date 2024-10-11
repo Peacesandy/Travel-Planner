@@ -4,7 +4,7 @@ import {
     fetchCoordinates,
     fetchWeather,
     fetchImage
-} from "../src/client/js/handleRequests.js";
+} from "../src/client/js/app.js";
 
 describe("Testing Requests Handling", () => {
     it("Checking core functionality. They should all be defined", () => {
