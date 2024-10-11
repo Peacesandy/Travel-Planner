@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <script>src</script>
+    </head>
+     <body onload="Client.populateDestinations(), Client.initializeTravelPlanner()"></body>
+        <header>
+            <h1>Travel Planner App</h1><br>
+            <h4 id="slogan">Come see the world with us</h4>
+        </header>
+        <main class="container">
+           <section id="trip-booking-section">
+               <div class="trip-form-backboard rounded">
+                   <h2 id="trip-form-title">Trip Details</h2>
+                   <form id="trip-form" class="rounded" autocomplete="off">
+                       <label for="desired-dest">Destination:</label>
+                       <select id="desired-dest" name="desired-dest">
+                       </select>
+                       <label for="desired-startdate">Departs:</label>
+                       <input type="date" id="desired-startdate" name="desired-startdate" placeholder="Start Date">
+                    </form>
+                    <button id="get-travel-data" class="rounded" onclick="Client.getTripDetails()"> <strong>Check Trip</strong></button>
+               </div>
+           </section>
+           <section id="upcoming-trips-section">
+               <div class="upcoming-trips-backboard rounded"></div>
+           </section>
+           <section id="current-trips-section" class="rounded hide">
+               <div class="current-trips-backboard rounded">
+                <div id="trip-flight-container">
+                    <p id="trip-flight">Flight</p>
+                </div>
+                   <div id="trip-dest-container">
+                       <p id="trip-dest">Dest</p>
+                   </div>
+                   <div id="trip-image-container" class="rounded">
+                       <img id="trip-image" class="rounded">
+                   </div>
+                   <div id="trip-desc-container">
+                       <p id="trip-desc">Description</p>
+                   </div>
+                   <div id="trip-highlow-container">
+                       <p id="trip-highlow">High Low</p>
+                   </div>
+                   <div id="trip-booking-container">
+                    <button id="trip-cancel"><strong>Cancel Trip</strong</button>
+                    <button id="trip-book"><strong>Book Trip</strong</button>   
+                   </div>
+               </div>
+           </section>
+        </main>
+        <footer>
+            <h3>Powered by Javascript</h3>
+        </footer>
+        <script>
+           if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(error => {
+            console.log('Service Worker registration failed:', error);
+        });
+    });
+}
+        </script>
+    </body>
+</html>
