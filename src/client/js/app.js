@@ -1,20 +1,33 @@
-
 const getTripDetails = async () => {
     const dest = document.getElementById("desired-dest");
     const startDate = document.getElementById("desired-startdate");
 
-    if (dest.value.length <= 0) {
+    // Check if destination input exists and is not empty
+    if (!dest || dest.value.trim().length === 0) {
         alert("Please enter a valid city");
         return;
     }
 
-    if (startDate === null || startDate === undefined) {
+    // Check if startDate input exists and is not empty
+    if (!startDate || startDate.value.trim().length === 0) {
         alert("Please enter a valid date for your trip");
         return;
     }
 
-    let city = dest.value.split(",")[0].trim();
-    let country = dest.value.split(",")[1].trim();
+    // Split the destination into city and country safely
+    const [city, country] = dest.value.split(",").map(part => part ? part.trim() : '');
+
+    // Validate that both city and country are provided
+    if (!city) {
+        alert("Please enter a valid city.");
+        return;
+    }
+
+    if (!country) {
+        alert("Please enter a valid country.");
+        return;
+    }
+
     let tripStartDate = startDate.value;
 
     try {
