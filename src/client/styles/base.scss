@@ -22,6 +22,20 @@ input {
 	margin: 10px;
 }
 
+/* Ensure the form elements are responsive */
+input[type="text"] {
+	width: 100%; /* Makes the text box fill the width of its container */
+	padding: 10px;
+	font-size: 16px; /* Ensures readability */
+	box-sizing: border-box; /* Ensures padding doesn't affect the total width */
+}
+
+label {
+	font-size: 16px; /* Ensures the label is readable */
+	display: block;
+	margin-bottom: 8px;
+}
+
 select {
 	width: 200px;
 	font-size: 15px;
@@ -295,6 +309,16 @@ select {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	cursor: pointer;
+}
+
+button {
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: green;
+	color: yellow;
 }
 
 .w3-circle {
@@ -428,6 +452,13 @@ select {
 		margin: 5px;
 		background-color: red;
 		color: white;
+	}
+
+	@media (max-width: 600px) {
+		input[type="text"],
+		label {
+			font-size: 14px; /* Slightly smaller font size for mobile */
+		}
 	}
 
 	#trip-flight-container {
